@@ -1,0 +1,12 @@
+---
+import VantProvider from '@/components/home/VantProvider.vue'
+import Container from '@/layouts/Container.astro'
+import Gallery from './_Gallery.vue'
+const isDark = process.env.DARK_MODE === 'true'
+---
+
+<Container>
+  <VantProvider isDark={isDark}>
+    <Gallery client:only="vue" isDark={isDark} />
+  </VantProvider>
+</Container>

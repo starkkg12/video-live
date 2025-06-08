@@ -1,0 +1,82 @@
+@text-primary: #434343;
+@text-grey: #aeaeb1;
+@text-secondary: #656565;
+@text-green: #34c759;
+@text-green-light: #F1FEE6;
+@text-tag: #9d9da3;
+@text-red: #fc7e7e;
+@text-orange: #FF8F28;
+@bg-grey: #f2f2f2;
+@bg-actived: #f4ffe8;
+@bg-owner: #1a1b1c80;
+@bg-color: #fafafa;
+@bg-blue: #1989fa;
+@bg-black-opacity: #00000080;
+@border-color: #f2f2f2;
+@box-shadow-card: 0px 0px 8px 0px #0000001a;
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bottom-buttons {
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  .van-button{
+    border-radius: 8px;
+    border:none;
+    height: 40px;
+    &:hover{
+      opacity: 0.9;
+    }
+  }
+  :deep(.van-button__text) {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .van-button--success:not(.van-button--plain) {
+    background-color: @text-green;
+  }
+  .van-button--danger:not(.van-button--plain) {
+    background-color: @text-red;
+  }
+  .van-button--success.van-button--plain {
+    border:1px solid @text-green;
+    color: @text-green;
+    background-color: @text-green-light;
+  }
+  .van-button--danger.van-button--plain  {
+    border:1px solid @text-red;
+    color: @text-red;
+    background-color: #fff;
+  }
+}
+.loading-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.popup-for-global {
+  max-width: 600px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  &.height-auto{
+    height: auto;
+  }
+  :deep(.van-icon-arrow-left.van-nav-bar__arrow) {
+    color: @text-primary;
+    font-size: 20px;
+  }
+}
+:deep(.height-without-nav-bar) {
+  height: calc(100% - 46px);
+}

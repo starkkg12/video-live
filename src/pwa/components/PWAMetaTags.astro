@@ -1,0 +1,47 @@
+---
+// PWA相关配置
+interface Props {
+  title?: string
+  description?: string
+  themeColor?: string
+  imageUrl?: string
+  siteUrl?: string
+  setDocumentTitle?: boolean
+}
+
+const {
+  title = 'PWTK',
+  description = '澳六直播应用',
+  themeColor = 'transparent',
+  imageUrl = '/share.png',
+  siteUrl = 'https://short197.dating141.com/',
+  setDocumentTitle = false,
+} = Astro.props
+---
+
+<!-- 基础元数据 -->{setDocumentTitle && <title>{title}</title>}
+<meta name="description" content={description} />
+<link rel="icon" type="image/svg+xml" href={imageUrl} />
+
+<!-- PWA基础支持 -->
+<link rel="manifest" href="/manifest.json" />
+<meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate" />
+
+<!-- iOS/Safari PWA支持 -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content={title} />
+<link rel="apple-touch-startup-image" href={imageUrl} />
+<link rel="apple-touch-icon" href={imageUrl} />
+<meta name="format-detection" content="telephone=no" />
+
+<!-- Android/Chrome PWA支持 -->
+<meta name="theme-color" content={themeColor} />
+<meta name="mobile-web-app-capable" content="yes" />
+
+<!-- 社交分享/Open Graph元数据 -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:url" content={siteUrl} />
+<meta property="og:type" content="website" />

@@ -1,0 +1,9 @@
+---
+import Container from '@/layouts/Container.astro'
+import FollowList from './_FollowList.vue'
+const { id } = Astro.params
+---
+
+<Container>
+  <FollowList client:only="vue" userId={id} />
+</Container>

@@ -1,0 +1,166 @@
+---
+
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - 页面不存在</title>
+  </head>
+  <body>
+    <div class="error-container">
+      <div class="error-content">
+        <div class="error-code">404</div>
+        <div class="error-icon">
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z"
+              fill="#FFF4F0"
+              stroke="#ff976a"
+              stroke-width="2"></path>
+            <path
+              d="M24 12V28"
+              stroke="#ff976a"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M24 35V36"
+              stroke="#ff976a"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="error-title">页面不见了</div>
+        <div class="error-message">您访问的页面可能已被删除或暂时不可用</div>
+        <div class="action-buttons">
+          <a href="/" class="home-button">返回首页</a>
+          <button class="back-button" onclick="window.history.back()">返回上页</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      sans-serif;
+  }
+
+  .error-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--van-background-2, #f7f8fa);
+    padding: 0 20px;
+  }
+
+  .error-content {
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .error-code {
+    font-size: 120px;
+    font-weight: bold;
+    color: var(--van-gray-5, #969799);
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .error-icon {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .error-title {
+    font-size: 24px;
+    color: var(--van-text-color, #323233);
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .error-message {
+    font-size: 16px;
+    color: var(--van-text-color-2, #969799);
+    margin-bottom: 30px;
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .home-button {
+    background-color: var(--van-primary-color, #1989fa);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .home-button:hover {
+    background-color: var(--van-primary-color-dark, #0570db);
+  }
+
+  .back-button {
+    background-color: var(--van-gray-5, #969799);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .back-button:hover {
+    background-color: var(--van-gray-6, #646566);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .error-code {
+      font-size: 100px;
+    }
+
+    .error-title {
+      font-size: 20px;
+    }
+
+    .action-buttons {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+</style>

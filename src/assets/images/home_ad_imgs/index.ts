@@ -1,0 +1,17 @@
+import img1 from './home_ad_img_1.jpeg'
+import img2 from './home_ad_img_2.png'
+import img3 from './home_ad_img_3.jpeg'
+import img4 from './home_ad_img_4.png'
+import img5 from './home_ad_img_5.jpeg'
+import img6 from './home_ad_img_6.png'
+import img7 from './home_ad_img_7.jpeg'
+import img8 from './home_ad_img_8.jpeg'
+import img9 from './home_ad_img_9.jpeg'
+import img10 from './home_ad_img_10.jpeg'
+import img11 from './home_ad_img_11.jpeg'
+import img12 from './home_ad_img_12.jpeg'
+import img13 from './home_ad_img_13.gif'
+import img14 from './home_ad_img_14.jpeg'
+import img15 from './home_ad_img_15.png'
+
+export default [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15]

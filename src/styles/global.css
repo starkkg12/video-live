@@ -1,0 +1,216 @@
+:root {
+  --custom-max-width: 480px;
+  --custom-fill-t: #9b9b9b;
+  --custom-fill-bg: #363636;
+  --custom-block-1: #000000;
+  --custom-block-2: #191919;
+  --van-cell-group-background: transparent;
+  --van-field-background: transparent;
+  --van-cell-background: transparent;
+}
+#com-container {
+  /* max-width: 600px; 你可以根据需要调整最大宽度 */
+  margin: 0 auto; /* 这将使容器水平居中 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 可选的阴影效果，增加立体感 */
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  #com-container {
+    box-shadow: none; /* 在小屏设备上取消阴影 */
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+html {
+  height: 100vh;
+  background-color: var(--van-background);
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+.van-config-provider {
+  background-color: var(--van-background);
+  /* color: var(--van-text-color); */
+}
+.van-nav-bar {
+  background-color: var(--van-background);
+}
+
+.iconfont {
+  font-family: iconfont !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 全局导航栏样式 */
+.nav-wrap {
+  height: 46px;
+}
+
+.nav-wrap .nav-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+
+@media screen and (min-width: 768px) {
+  #com-container {
+    width: var(--custom-max-width);
+    overflow: hidden;
+  }
+  .login {
+    width: var(--custom-max-width);
+  }
+  .tabbar > .van-tabbar {
+    width: var(--custom-max-width);
+  }
+  .top-menu {
+    width: var(--custom-max-width);
+  }
+  .van-popup {
+    position: absolute;
+    width: var(--custom-max-width)!important;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .tabbar-item {
+    font-size: 64px;
+  }
+  /* 导航栏媒体查询样式 */
+  .nav-wrap .nav-bar {
+    max-width: var(--custom-max-width);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+@media screen and (max-width: 767px) {
+  .tabbar-item {
+    font-size: 13.33vw
+  }
+}
+.current-text-color{
+  color: var(--van-text-color);
+}
+.popup-adaptive{
+  @media screen and (min-width: 768px) {
+    width: var(--custom-max-width) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100% !important;
+  }
+}
+
+/* 自定义滚动条样式 - 隐藏式滚动条 */
+/* 适用于Webkit浏览器（Chrome、Safari、Edge等） */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* 鼠标悬停时滚动条滑块 */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(144, 147, 153, 0.3);
+}
+
+/* 全局隐藏滚动条同时保持滚动功能 */
+html, body, div {
+  scrollbar-width: none; /* Firefox - 彻底隐藏 */
+  scrollbar-color: transparent transparent; /* Firefox */
+  -ms-overflow-style: none; /* IE 和 Edge */
+}
+
+/* 为Webkit浏览器彻底隐藏滚动条 */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+div::-webkit-scrollbar {
+  display: none; /* Chrome, Safari 和 Opera */
+  width: 0;
+  height: 0;
+}
+
+/* 可选：为特定容器添加自动隐藏滚动条效果 */
+.scroll-container {
+  overflow: auto;
+  -ms-overflow-style: none; /* IE 和 Edge */
+}
+
+/* 在未悬停时隐藏滚动条 */
+.scroll-container::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* 在悬停时显示滚动条 */
+.scroll-container:hover::-webkit-scrollbar-thumb {
+  background: rgba(144, 147, 153, 0.3);
+}
+
+
+.safe-area-inset-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-inset-top {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+.loginModel {
+  background: var(--van-background);
+  position: fixed !important;
+  width: 5.75rem;
+  min-width: 295px;
+  overflow-y: inherit !important;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0.36rem #898989;
+}
+.iphone-safari-bottom {
+  padding-bottom: 60px;
+}
+
+@media screen and (max-width: 300px) {
+  .loginModel {
+    min-width: unset;
+  }
+}
+
+

@@ -1,0 +1,9 @@
+---
+import Container from '../../layouts/Container.astro'
+import My from './_My.vue'
+---
+
+<meta name="theme-color" content="#000000" />
+<Container>
+  <My client:only="vue" userId="" />
+</Container>

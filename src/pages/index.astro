@@ -1,0 +1,8 @@
+---
+import Container from '@/layouts/Container.astro'
+import Home from './video/_VideoHome.vue'
+---
+
+<Container>
+  <Home client:only="vue" />
+</Container>

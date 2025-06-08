@@ -1,0 +1,32 @@
+---
+import Container from '@/layouts/Container.astro'
+import MessageList from './_MessageList.vue'
+import InteractionMessage from './_InteractionMessage.vue'
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return [
+    { params: { key: 'system' } },
+    { params: { key: 'voice' } },
+    { params: { key: 'collect' } },
+    { params: { key: 'follow' } },
+    { params: { key: 'comment' } },
+    { params: { key: 'activity' } },
+    { params: { key: 'interaction' } },
+  ]
+}
+
+const { key } = Astro.params
+const isInteraction = key === 'interaction'
+---
+
+<Container>
+  {
+    isInteraction ? (
+      <InteractionMessage client:only="vue" />
+    ) : (
+      <MessageList msgKey={key} client:only="vue" />
+    )
+  }
+</Container>

@@ -1,0 +1,10 @@
+---
+import Container from '@/layouts/Container.astro'
+import My from './_My.vue'
+
+const { id } = Astro.params
+---
+
+<Container>
+  <My client:only="vue" userId={id || ''} />
+</Container>

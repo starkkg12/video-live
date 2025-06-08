@@ -1,0 +1,44 @@
+---
+import VantProvider from '@/components/home/VantProvider.vue'
+import PWAMetaTags from '@/pwa/components/PWAMetaTags.astro'
+import '@/styles/global.css'
+import '@vant/touch-emulator'
+import 'vant/lib/index.css'
+
+// 判斷目前是否用dark mode
+const isDark = process.env.DARK_MODE === 'true'
+
+const appTitle = import.meta.env.PUBLIC_DEFAULT_TITLE || '澳六直播'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/share.png" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta property="og:title" content="澳六直播" />
+    <meta property="og:image" content="/share.png" />
+    <meta property="og:url" content="https://short197.dating141.com/" />
+    <!-- 防止iOS缩放和电话号码自动识别 -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- 所有PWA相关元数据和Open Graph标签集中管理 -->
+    <PWAMetaTags title={appTitle} setDocumentTitle={true} />
+
+    <!-- 字体图标库 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <VantProvider client:only="vue" isDark={isDark}>
+      <slot />
+    </VantProvider>
+  </body>
+</html>

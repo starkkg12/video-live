@@ -1,0 +1,42 @@
+import type { ConfigProviderThemeVars } from 'vant'
+
+const darkThemeVars: ConfigProviderThemeVars = {
+  gray1: '#323233',
+  gray2: '#646566',
+  gray3: '#969799',
+  gray4: '#c8c9cc',
+  gray5: '#dcdee0',
+  gray6: '#ebedf0',
+  gray7: '#f2f3f5',
+  gray8: '#f7f8fa',
+  background: '#000',
+  background2: '#f8f8f8',
+  textColor: '#fff',
+  activeColor: '#07c160',
+  navBarBackground: '#000',
+  navBarTextColor: '#fff',
+  navBarIconColor: '#fff',
+  tabbarBackground: '#121212',
+  tabbarItemActiveBackground: '#121212',
+  tabbarItemTextColor: '#888888',
+  tabbarItemActiveColor: '#fff',
+  buttonPrimaryBackground: '#ee0a25',
+  buttonPrimaryColor: '#fff',
+  buttonBorderWidth: '0px',
+  cellBackground: '#1a1a1a',
+  fieldPlaceholderTextColor: '#666666',
+  popupBackground: '#000',
+  cellTextColor: '#fff',
+  cellBorderColor: '#333',
+  sliderActiveBackground: '#07c160',
+  sliderInactiveBackground: '#333',
+  dividerTextColor: '#333',
+  overlayBackground: 'rgba(0, 0, 0, 0.7)',
+  gridItemContentBackground: '#121212',
+  cardBackground: '#1e1e1e',
+  buttonDefaultBackground: '#363636',
+  primaryColor: '#ee0a25',
+  
+}
+
+export default darkThemeVars

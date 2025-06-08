@@ -1,0 +1,8 @@
+---
+import Container from '@/layouts/Container.astro'
+import UserView from './_User.vue'
+---
+
+<Container>
+  <UserView client:only='vue' />
+</Container>

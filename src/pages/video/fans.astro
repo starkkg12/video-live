@@ -1,0 +1,8 @@
+---
+import Container from '@/layouts/Container.astro'
+import MyFansView from './_Fans.vue'
+---
+
+<Container>
+  <MyFansView client:only='vue' />
+</Container>

@@ -1,0 +1,9 @@
+---
+import Container from '@/layouts/Container.astro'
+import Detail from './_Detail.vue'
+const id = Astro.params.id ?? ''
+---
+
+<Container>
+  <Detail client:only="vue" id={id} />
+</Container>

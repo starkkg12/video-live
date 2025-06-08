@@ -1,0 +1,10 @@
+---
+import Container from '@/layouts/Container.astro'
+import LiveVue from './_Live.vue'
+const id = Astro.params.id ?? ''
+const owner = Astro.url.searchParams.get('owner') ?? ''
+---
+
+<Container>
+  <LiveVue client:only="vue" roomId={id} userId={owner} />
+</Container>
