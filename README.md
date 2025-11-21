@@ -1,70 +1,65 @@
-# pwtk-web-template-tk01-t_tk005
+pwtk-web-template-tk01-t_tk005
 
-# 版本管理
+本プロジェクトは、日本国内の中国語メインの開発現場で運用されているプロジェクトです。
 
-本项目实现了一套完整的PWA版本自动化管理系统，能够在构建过程中自动生成版本信息，并在PWA更新时通知用户。
+バージョン管理
 
-## 版本号规则
+本プロジェクトは、PWA のバージョン自動管理を実装しており、ビルド時に自動でバージョン情報を生成し、PWA の更新がある場合はユーザーへ通知します。
 
-- **基础版本号**: 使用语义化版本 `X.Y.Z` (主版本.次版本.补丁版本)
-- **完整版本号**: `X.Y.Z-YYYYMMDD-hash` 格式，包含日期和Git提交哈希
+バージョン番号のルール
 
-## 版本管理命令
+基本バージョン：セマンティックバージョニング X.Y.Z（メジャー.マイナー.パッチ）
 
-```bash
-# 查看当前版本
+完全バージョン：X.Y.Z-YYYYMMDD-hash 形式（日付と Git コミットハッシュを付与）
+
+バージョン管理コマンド
+# 現在のバージョンを表示
 npm run version:show
 
-# 手动升级版本号
-npm run version:patch  # 升级补丁版本 (1.0.0 -> 1.0.1)  
-npm run version:minor  # 升级次要版本 (1.0.0 -> 1.1.0)
-npm run version:major  # 升级主要版本 (1.0.0 -> 2.0.0)
+# 手動でバージョンを更新
+npm run version:patch  # パッチ更新 (1.0.0 -> 1.0.1)
+npm run version:minor  # マイナー更新 (1.0.0 -> 1.1.0)
+npm run version:major  # メジャー更新 (1.0.0 -> 2.0.0)
 
-# 自动确定版本升级类型
-npm run version:auto   # 根据提交记录自动决定升级类型
+# コミット履歴から自動で更新区分を判定
+npm run version:auto   # 自動判定でバージョン更新
 
-# 简单更新版本并创建版本文件
-npm run version:bump   # 升级补丁版本并更新版本文件
-```
+# かんたん更新（パッチ）＋バージョンファイル作成
+npm run version:bump   # パッチ更新してバージョンファイルを更新
 
-## 开发与构建
+開発 & ビルド
+# 開発環境で起動
+npm run dev            # ダークモード
+npm run dev:light      # ライトモード
+npm run dev:https      # HTTPS 開発モード
 
-```bash
-# 开发环境启动
-npm run dev            # 暗色模式
-npm run dev:light      # 亮色模式
-npm run dev:https      # HTTPS开发模式
+# 本番ビルド
+npm run build          # ダークモードでビルド
+npm run build:light    # ライトモードでビルド
 
-# 构建生产环境
-npm run build          # 暗色模式构建
-npm run build:light    # 亮色模式构建 
+# ワンコマンドでビルド＆バージョン表示
+npm run deploy         # ビルドしてバージョン番号を表示
 
-# 一键打包发布
-npm run deploy         # 构建并显示版本号
-```
+バージョンファイル
 
-## 版本文件
+開発／ビルド時に version.json が自動生成され、以下の情報を含みます。
 
-在开发和构建过程中会自动生成`version.json`，包含以下信息：
-
-```json
 {
-  "version": "1.0.1",              // package.json中的版本号
-  "fullVersion": "1.0.1-20240710-a1b2c3d", // 完整版本号
-  "environment": "production",      // 环境（production/development）
-  "buildDate": "2024-07-10T12:34:56.789Z", // 构建时间
-  "buildTimestamp": 1689030000000,  // 构建时间戳
-  "git": {                          // Git信息
-    "hash": "a1b2c3d",              // 提交哈希
-    "branch": "main",               // 分支
-    "message": "feat: 添加新功能",   // 提交信息
-    "date": "2024-07-10T12:00:00Z", // 提交时间
-    "isDirty": false                // 是否有未提交的更改
+  "version": "1.0.1",                        // package.json のバージョン
+  "fullVersion": "1.0.1-20240710-a1b2c3d",   // 完全バージョン
+  "environment": "production",               // 環境（production / development）
+  "buildDate": "2024-07-10T12:34:56.789Z",   // ビルド日時
+  "buildTimestamp": 1689030000000,           // ビルドのタイムスタンプ
+  "git": {                                   // Git 情報
+    "hash": "a1b2c3d",                       // コミットハッシュ
+    "branch": "main",                        // ブランチ
+    "message": "feat: 新機能を追加",          // コミットメッセージ
+    "date": "2024-07-10T12:00:00Z",          // コミット日時
+    "isDirty": false                         // 未コミットの変更があるか
   }
 }
-```
 
-## PWA更新机制
+PWA の更新仕組み
 
-当Service Worker检测到新版本时，会显示更新提示，用户可以点击"更新"按钮刷新到最新版本。
-版本历史会被记录到本地存储中，可在调试模式下查看。
+Service Worker が新バージョンを検知すると更新ダイアログを表示し、ユーザーが「更新」を押すと最新バージョンへリロードします。
+バージョン履歴はローカルストレージに記録され、デバッグモードで確認可能です。
